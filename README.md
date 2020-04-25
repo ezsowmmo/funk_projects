@@ -1,3 +1,3 @@
 # funk_projects
 
-<h1>All things related to my Client Based Projects and Personal POC</h1>
+<h1 style=color:"teal">All things related to my Client Based Projects and Personal POC</h1>
