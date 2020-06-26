@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sowmmo's Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#726193">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="tassets/css/main.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="timages/fav.ico">
+     <style>
+                    #terminal {
+                      margin: 20px;
+                      background-color: rgba(0, 0, 0, 0.9);
+                      color: #00ff1e;
+                      font-family: Inconsolata, monospace;
+                      height: 400px;
+                      width: 500px;
+                      position: absolute;
+                      padding: 10px;
+                      border-radius: 5px;
+                      box-shadow: 0 0 10px black;
+                      line-height: 15px;
+                      word-wrap: break-word;
+                      text-shadow: 0 0 5px #00ff1e;
+                      overflow: hidden;
+                      -webkit-animation-fill-mode: forwards;
+                    }
+          
+.blink {
+  
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #ecf0f1; -webkit-box-shadow: 0 0 3px #ecf0f1; }
+  50% { background-color: #eef2f4; -webkit-box-shadow: 0 0 40px #eef2f4; }
+  100% { background-color: #ffffff; -webkit-box-shadow: 0 0 3px #ffffff; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #ecf0f1; -moz-box-shadow: 0 0 3px #ecf0f1; }
+  50% { background-color: #eef2f4; -moz-box-shadow: 0 0 40px #eef2f4; }
+  100% { background-color: #ffffff; -moz-box-shadow: 0 0 3px #ffffff; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #ecf0f1; box-shadow: 0 0 3px #ecf0f1; }
+  50% { background-color: #eef2f4; box-shadow: 0 0 40px #eef2f4; }
+  100% { background-color: #ffffff; box-shadow: 0 0 3px #ffffff; }
+}
+
+@keyframes glowing {
+  0% { background-color: #ecf0f1; box-shadow: 0 0 3px #ecf0f1; }
+  50% { background-color: #eef2f4; box-shadow: 0 0 40px #eef2f4; }
+  100% { background-color: #ffffff; box-shadow: 0 0 3px #ffffff; }
+}
+
+.blink {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+
+                    @-webkit-keyframes off {
+                      10% {
+                        background-color: rgba(255, 255, 255, 0.9);
+                      }
+                      20% {
+                        width: 500px;
+                        height: 1px;
+                        top: 198px;
+                        left: 0;
+                      }
+                      50% {
+                        width: 10px;
+                        height: 10px;
+                        top: 198px;
+                        left: 245px;
+                        box-shadow: 0 0 10px white;
+                        background-color: white;
+                      }
+                      98% {
+                        width: 10px; 
+                        height: 10px;
+                      }
+                      100% {
+                        top: 198px;
+                        width: 0;
+                        height: 0;
+                        left: 245px;
+                      }
+                    }
+         @media only screen and (max-width:767px) {
+             #terminal {
+                        height: 400px;
+                      width: 300px;
+                 margin-top: 30%;
+                 
+                
+                    }
+             
+         }
+</style>
+<script type="text/javascript">
+	 
+ function ezFunction() {
+                           var string =
+                               ">INITIALIZING.|../>STARTUP OK./>If you are seeing this page| then this domain's website was made by Sowmmo ./>Terminating message in 3 |2 |1";
+                            var fString = "";
+                            var progress = 0;
+                            var badString = "";
+                            var blinker = false;
+
+                            var goMad = function() {
+                              badString = "";
+                              var count = 0;
+                              while (badString.length < 1350) {
+                                badString += Math.floor(Math.random() * 10);
+                                count++;
+                              }
+                              $("#terminal").text(badString);
+                              setTimeout(function() {
+                                 
+                                $("#terminal").text("");
+                                $("#terminal")
+                                  .css("padding", "0")
+                                  .css("-webkit-animation", "off 1s forwards");
+                              }, 2000);
+                                
+                            };
+
+                            blink = function() {
+                              blinker ? $("#terminal").html(fString) : $("#terminal").html(fString + "_");
+                              blinker = !blinker;
+                            };
+
+                            var pause = function() {
+                              var setBlink = setInterval(function() {
+                                blink();
+                              }, 500);
+                              setTimeout(function() {
+                                type();
+                                clearInterval(setBlink);
+                              }, 1000);
+                            };
+
+                            var type = function() {
+                              if (progress < string.length) {
+                                var next = string.substring(progress, progress + 1);
+                                switch (next) {
+                                  case "|":
+                                    pause();
+                                    break;
+                                  case "/":
+                                    fString += "<p>";
+                                    setTimeout(function() {
+                                      type();
+                                    }, 100);
+                                    break;
+                                  default:
+                                    fString += next;
+                                    $("#terminal").html(fString + "_");
+                                    setTimeout(function() {
+                                      type();
+                                    }, 50 + Math.random() * 100);
+                                    break;
+                                }
+                                progress++;
+                              } else {
+                                //else{setInterval(function(){blink();}, 500);}
+                                setInterval(function() {
+                                  goMad();
+                                }, 50);
+                              }
+                            };
+
+                            type();
+      
+ }
+</script>
+</head>
+<body>
+    		<div id="page-wrapper">
+
+				<!-- Wrapper -->
+					<div id="wrapper">
+
+						<!-- Panel (Banner) -->
+							<section class="panel banner right">
+								<div class="content color0 span-3-75">
+									<h2 class="major">Thank you for visiting my <strong>Portfolio</strong></h2>
+                                    <p>I am a Dhaka based <strong>Web/ UI/ UX Designer, Developer</strong> & <strong>Video Editor.</strong><br>
+                                        Started my web development journey with my online radio <a href="http://rootsairbd.funknoodlesstudio.com/" target="_blank">Roots Air BD</a> back in 2012. Then I started to work with local and multinational companies, NGOs as well as music bands/ artists creating, designing websites and videos.</p>
+							 
+									 
+										 <a href="#first" class="button special color1 circle icon fa-angle-right">Next</a> 
+<!--   The terminal                                     <li> <button type="button" class="blink button special color2 circle icon fa-question" data-toggle="modal" data-target="#myModal" onclick="ezFunction()">Open Modal</button></li>-->
+									 
+								</div>
+								<div class="image filtered span-1-75" data-position="25% 25%">
+									<img src="timages/pic01.jpg" alt="" />
+								</div>
+							</section>
+                        
+		               <!-- Panel (Spotlight) -->
+						
+				 
+							 
+
+						<!-- Panel -->
+							<section class="panel color1">
+								<div class="intro joined">
+									<h2 class="major">Jack of all trades, Master of some</h2>
+                                    <p>These are some of the technologies I have worked with so far that are my favourite: </p>
+                                        <table  style="zoom:.8">    
+                                            <tbody>
+                                              <tr>
+                                               <td>HTML</td>
+                                               <td>Bootstrap</td>
+                                                  <td>CSS</td>
+                                              </tr>
+                                                
+                                              <tr>
+                                                <td>PHP</td>
+                                                <td>Wordpress</td>                                                    
+                                                 <td>Bitbucket</td>
+                                              </tr>
+                                            
+                                             <tr>
+                                                 <td>Ajax</td>
+                                                <td>JavaScript</td>
+                                                <td>Git</td>      
+                                              </tr>
+                                              <tr>
+                                                 <td>Adobe Premier</td>
+                                                <td>Adobe After Effects</td>
+                                                <td>Adobe XD</td>      
+                                              </tr>
+                                                
+                                            </tbody>
+                                          </table>
+                                        
+                                       
+                                </div>
+								<div class="inner">
+									<ul class="grid-icons three connected">
+										<li><span class="icon fa-html5"><span class="label"> </span></span></li>
+										<li><span class="icon fa-camera-retro"><span class="label"> </span></span></li>
+										<li><span class="icon fa-wordpress"><span class="label"> </span></span></li>
+										<li><span class="icon fa-video-camera"><span class="label"> </span></span></li>
+										<li><span class="icon fa-codepen"><span class="label"> </span></span></li>
+										<li><span class="icon fa-code"><span class="label"> </span></span></li>
+									</ul>
+								</div>
+							</section>
+                        
+                     	<!-- Portfolio --> 
+                        	<section class="panel spotlight large left" id="first">
+								<div class="content span-5">
+									<h2 class="major">My Projects</h2>
+                                    <p>Scroll to see the website projects I have done over the years<br>
+                                    <i class="icon fa-youtube"> <a href="https://www.youtube.com/watch?v=E52khwxZzDs&list=PLcbrfgIbFDMRAorYWvMSmJaPwkJAVdqxt" target="_blank">Click here to see my edited videos</a></i>
+                                    </p>
+                                    
+								</div>
+								<div class="image filtered tinted" data-position="top right">
+									<img src="timages/pic03.jpg" alt="" />
+								</div>
+							</section>
+                        
+                        
+                    <section class="panel">
+								 
+								<div class="gallery">
+									<div class="group span-3">
+										<a href="http://hcpspace.solutions.iqvia.com/" target="_blank" class="image filtered span-3" data-position="bottom"><img src="timages/Capture1.JPG" alt="" /></a>
+										<a href="http://sixseasonsreview.com/"  target="_blank" class="image filtered span-1-5" data-position="center"><img src="timages/ssr.jpg" alt="" /></a>
+										<a href="http://jaminiarts.com/"  target="_blank" class="image filtered span-1-5" data-position="bottom"><img src="timages/jamini.jpg" alt="" /></a>
+									</div>
+									<a href="http://funknoodlesstudio.com/"  target="_blank" class="image filtered span-2-5" data-position="top"><img src="timages/funk.JPG" alt="" /></a>
+									<div class="group span-4-5">
+										<a href="http://getampedseries.com/" target="_blank" class="image filtered span-3" data-position="top"><img src="timages/amped.png" alt="" /></a>
+										<a href="http://conclusiontheband.com/" target="_blank" class="image filtered span-1-5" data-position="center"><img src="timages/conc.jpg" alt="" /></a>
+										<a href="http://porahotheband.com/" target="_blank" class="image filtered span-1-5" data-position="bottom"><img src="timages/poraho.JPG" alt="" /></a>
+										<a href="http://ownedtheband.net/"  target="_blank"class="image filtered span-3" data-position="top"><img src="timages/owned.JPG" alt="" /></a>
+									</div>
+									<a href="http://rootsairbd.funknoodlesstudio.com/"  target="_blank" class="image filtered span-2-5" data-position="right"><img src="timages/roots.JPG" alt="" /></a>
+										<a href="https://sqljourney.com/"  target="_blank" class="image filtered span-2-5" data-position="right"><img src="timages/sql.JPG" alt="" /></a>
+								</div>
+							</section>
+                        
+ 	                    <!-- Panel -->
+							<section class="panel color4-alt">
+								<div class="intro color4">
+									<h2 class="major">Contact</h2>
+                                        <span class="icon fa-mobile">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +880 1673867123 </span>                                          
+                                        <span class="icon fa-envelope">&nbsp;&nbsp;&nbsp; <a href="mailto:ezsowmmo@gmail.com?Subject=Hi%20Sowmmo" target="_top">ezsowmmo@gmail.com </a></span>
+                                  
+								</div>
+								<div class="inner columns divided">
+								 
+									<div class="span-1-5">
+										<ul class="contact-icons color1">
+											 
+									 
+											 
+											<li class="icon fa-instagram"><a href="https://www.instagram.com/sowmmo/" target="_blank">instagram.com/sowmmo</a></li>
+											 
+										</ul>
+									</div>
+								</div>
+							</section>
+
+					 
+							 
+
+					</div>
+
+			</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-body">
+          <div id="terminal"></div>
+        </div>
+      </div>
+  </div>  
+ 
+<script src="tassets/js/jquery.min.js"></script>
+			<script src="tassets/js/skel.min.js"></script>
+			<script src="tassets/js/main.js"></script>
+    
+    
+ 
+</body>
+</html>
