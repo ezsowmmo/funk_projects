@@ -1,3 +1,3 @@
-# funk_projects
+# Projects done for http://funknoodlesstudio.com/
 
-<h1 style=color:"teal">All things related to my Client Based Projects and Personal POC</h1>
+<h3 style=color:"teal">Few highllighted client based projects for Funk Noodles Studio and personal Proof of Concepts</h3>
